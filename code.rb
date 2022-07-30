@@ -34,17 +34,21 @@
   end
   
   def decode_word(word)
+   
     @sentence = word.split
+
     @current_word = ''
-    @sentence.each do |line|
-      letter_symbol(line)
-      @current_word += letter_symbol(line)
+    @sentence.each do |x|
+      letter_symbol(x)
+      
+      @current_word += letter_symbol(x)
     end
     print "#{@current_word} "
   end
   
   def decode_message(message)
-    @sentence = message.split
+    @sentence = message.split('  ')
+   
     @sentence.each do |enum|
       decode_word(enum)
     end
